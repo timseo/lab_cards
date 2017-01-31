@@ -7,15 +7,32 @@ console.log('Connection established!')
 // Make a deck of cards.
 
 // 1. Make an array of suits.
-
+var suits = ['hearts', 'spades', 'clubs', 'diamonds']
 // 2. Make an array of values.
+var values = [2, 3, 4, 5, 6 , 7, 8, 9, 10, 'jack', 'queen', 'king', 'ace']
 
 // 3. Write a constructor function for Card which takes two arguments, suit and val. Include a stateValue method to return the card's suit and value in a concatenated string.
-
+var Card = function(suits, values) {
+  this.suit = suits
+  this.val = values
+  this.stateValue = function(){
+    return 'This is the ' + this.val + ' of ' + this.suit + '.'
+  }
+}
 // 4. Using iteration, build a deck of cards.
+var deck = []
 
+for (var i = 0; i < values.length; i++) {
+  for (var j = 0; j < suits.length; j++) {
+    var card = new Card(suits[j], values[i])
+    deck.push(card)
+  }
+}
 // 5. Add an event listener to console.log the deck object and the deck length when a specific button is clicked (don't forget to create the button in your HTML!)
-
+document.getElementById('showDeck').addEventListener('click', function() {
+  console.log(deck)
+  console.log(deck.length)
+})
 
 //////////////////////////////////
 //           PART 2             //
@@ -52,4 +69,3 @@ console.log('Connection established!')
 // 6. Add the animals that you made in step 4 to the shelter that you made in step 5.
 
 // 7. Add an event listener to console.log the shelter object when a specific button is clicked (don't forget to create the button in your HTML!)
-
