@@ -41,15 +41,31 @@ document.getElementById('showDeck').addEventListener('click', function() {
 // Make a list of animals in a shelter.
 
 // 1. Make a constructor function for animals that takes name, species, breed, and available as arguments.
-
+var Animals = function(name, species, breed, available) {
+  this.name = name
+  this.species = species
+  this.breed = breed
+  this.available = available
+}
 // 2. Make three animals and save them each to variables.
+var pooba = new Animals('Pooba', 'Hedgehog', 'Spiny', true)
+var simba = new Animals('Simba', 'Lion', 'King of the Jungle', true)
+var tony = new Animals('Tony', 'tiger', 'tony the tiger', false)
 
 // 3. Make an object to represent the shelter. Give it a name, location, and an empty list of animals.
-
+var shelter1 = {
+  name: 'Jungle Cage',
+  location: 'Sahara',
+  animals: []
+}
 // 4. Add the animals that you made in step 2 to the shelter that you made in step 3.
+shelter1.animals.push(pooba, simba, tony)
 
 // 5. Add an event listener to console.log the shelter object when a specific button is clicked (don't forget to create the button in your HTML!)
-
+document.getElementById('showShelter1').addEventListener('click', function() {
+  console.log('shelter from part 2:')
+  console.log(shelter1)
+})
 //////////////////////////////////
 //           PART 3             //
 //////////////////////////////////
